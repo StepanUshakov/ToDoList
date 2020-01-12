@@ -7,7 +7,7 @@
         android:id="@+id/new-task"
         android:icon="@drawable/plus_sc"
         app:showAsAction="always"
-        android:tooltipText="Добавить задачу"
+        android:tooltipText="@string/task_add"
         />
 
 </menu>

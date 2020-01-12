@@ -26,7 +26,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 
 import java.util.ArrayList;
@@ -70,7 +69,6 @@ public class MainActivity extends AppCompatActivity {
 
         DBAsyncTask dbAsyncTask = new DBAsyncTask(null, null);
         dbAsyncTask.execute(); // Получение сформированного списка задач из отдельного потока
-
     }
 
     @Override
@@ -85,20 +83,21 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem menuItem){
         if(menuItem.getItemId() == R.id.new_task){
-            final EditText userTaskGet = new EditText(this);
+            final EditText userTaskTitle = new EditText(this);
+            userTaskTitle.setHint(R.string.alert_dialog_user_task_title);
             AlertDialog alert = new AlertDialog.Builder(this)
-                    .setTitle("Добавить задание")
-                    .setMessage("Что добавить")
-                    .setView(userTaskGet)
-                    .setPositiveButton("Добавить", new DialogInterface.OnClickListener() {
+                    .setTitle(R.string.alert_dialog_title)
+                    .setMessage(R.string.alert_dialog_message)
+                    .setView(userTaskTitle)
+                    .setPositiveButton(R.string.alert_dialog_positive_button, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            String task = String.valueOf(userTaskGet.getText());
+                            String task = String.valueOf(userTaskTitle.getText());
                             DBAsyncTask dbAsyncTask = new DBAsyncTask(task, null); // Создание потока с передачей данных на запись
                             dbAsyncTask.execute(); // Получение сформированного списка задач из отдельного потока
                         }
                     })
-                    .setNegativeButton("Отмена", null)
+                    .setNegativeButton(R.string.alert_dialog_negative_button, null)
                     .create();
             alert.show();
             return true;

@@ -2,4 +2,10 @@
     <string name="app_name">ToDoList</string>
     <string name="btn_delete">Удалить</string>
     <string name="task_add">Добавить задачу</string>
+    <string name="list_title_hint">Название списка</string>
+    <string name="alert_dialog_title">Добавить задание</string>
+    <string name="alert_dialog_message">Опишите задачу</string>
+    <string name="alert_dialog_positive_button">Добавить</string>
+    <string name="alert_dialog_negative_button">Отмена</string>
+    <string name="alert_dialog_user_task_title">Название задачи</string>
 </resources>
