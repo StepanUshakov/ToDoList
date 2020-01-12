@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ToDoList</string>
+    <string name="app_name">ToDoList - список задач</string>
     <string name="btn_delete">Удалить</string>
     <string name="task_add">Добавить задачу</string>
     <string name="list_title_hint">Название списка</string>
